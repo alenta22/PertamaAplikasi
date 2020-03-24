@@ -1,0 +1,12 @@
+.col-md-9 {
+    background : #339aa6;
+  }
+  
+  .col-md-3 {
+    background : #339aa6;
+  }
+  
+  ::-webkit-scrollbar{width:15px}
+  ::-webkit-scrollbar-track{background:#f1f1f1}
+  ::-webkit-scrollbar-thumb{background:#339aa6;border-radius:3px}
+  ::-webkit-scrollbar-thumb:hover{background:#305B90}

@@ -5,10 +5,224 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/bootstrap/css/bootstrap.css'>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/style.css">
     <script src='main.js'></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="card mt-3"> 
+          <div class="row no-gutters">
+        <!--      <div class="col-md-12"> -->
+              <div class="col-md-3">
+                <div class="container">
+               <img src="https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png" class="rounded-circle" height="200pt" width="200pt" alt="...">
+              </div>
+          </div>
+              <div class="col-md-9">
+                 <div class="card-body">
+                      <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">NAMA : ALENTA BIO SANDRA</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">NIM : 201701044</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">E-MAIL: alenta8sandra@gmail.com</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Phone :089530813888</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">ALAMAT : Jl. Lanud Wirasaba Rt 02 Rw 06</p>
+        
+                    </div>
+              </div>
+        <!--      </div> -->
+          </div>
+        </div>
+        <div class ="container">
+      <div class="card-deck">
+        <div class="card">
+          <div class="card-body">
+                <p class ="card-text text-center">Nilai Rata-Rata Ujian</p>
+            <p class="card-text text-center" style ="text-align text-center; font-size: 500pt">
+              <div class="" ; style = "card-text text-center" id="nilai_ujian"></div>
+            </p>
+            
+            <dl class="row" style= "text-align:center">
+        <dd class="col-sm-6">Nilai Ujian Tertulis</dd>
+        <dd class="col-sm-6">Ujian Praktek</dd>
+            </dl>
+            <dl class="row" style= "text-align:center">
+        <dd class="col-sm-6">
+          <div id="nilai_ujianTulis"></div> 
+        </dd>
+        <dd class="col-sm-6">
+          <div id="nilai_prak"></div>
+        </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <p class ="card-text text-center">Skore TOEFL</p>
+            <p class="card-title" style ="card-text text-center; font-size: 100pt">
+              <div id="score_toefl"></div>
+                       </p>
+          </div>
+          <ul class="list-group ">
+        <li class="list-group-item" >Nilai</li>
+            <li class="list-group-item" >
+              <div id="nilai_toefl"></div>
+            </li>
+            </ul>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <p class ="card-text text-center">Status Beasiswa</p>
+            <p class="card-title" style ="card-text text-center; font-size: 60pt">
+              <div id="statusbsw"></div>
+            </p>
+            <ul class="list-group ">
+        <li class="list-group-item" >Nilai</li>
+            <li class="list-group-item" >
+              <div id="nilai_beasiswa"></div>
+              </li>
+            </ul>
+          
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      <div class="container"></div>
+
+      <script>
+      var nilai_ujian = document.getElementById("nilai_ujian");
+var nilai_tulis1 = document.getElementById("nilai_tulis1");
+var nilai_tulis2 = document.getElementById("nilai_tulis2");
+var nilai_prak = document.getElementById("nilai_prak");
+var nilai_ujianTulis = document.getElementById("nilai_ujianTulis");
+
+var tulis1 = prompt("Masukkan Nilai Ujian Tertulis Pertama");
+var tulis2 = prompt("Masukkan Nilai Ujian Tertulis Kedua");
+var prak = prompt("Masukkan Nilai Ujian Praktik");
+var hasil_ujian = (parseInt(tulis1) + parseInt(tulis2) + parseInt(prak))/3;
+var ujian_tulis = (parseInt(tulis1) + parseInt(tulis2))
+
+nilai_ujianTulis.innerHTML = + ujian_tulis;
+nilai_prak.innerHTML = + prak;
+nilai_ujian.innerHTML = + hasil_ujian;
+
+
+var nilai_toefl= document.getElementById("nilai_toefl");
+var score_toefl= document.getElementById("score_toefl");
+var toefl =prompt("Masukkan Score Toefl");
+var toefl1 = (parseInt(toefl));
+score_toefl.innerHTML = + toefl1;
+
+if( parseInt(toefl) >= 500){
+ nilai_toefl.innerHTML = "100";
+}
+else if(parseInt(toefl) >= 450){
+  nilai_toefl.innerHTML = "85";
+}
+else if(parseInt(toefl) < 450){
+  nilai_toefl.innerHTML = "50";
+}
+
+
+var nilai_beasiswa= document.getElementById("nilai_beasiswa");
+var nilai_toefl=nilai_toefl.innerHTML;
+var score_beasiswa = ( parseInt(hasil_ujian) + parseInt(nilai_toefl))/2;
+nilai_beasiswa.innerHTML = + score_beasiswa;
+
+var statusbsw= document.getElementById("statusbsw");
+
+var nilai= + score_beasiswa;
+if(nilai >= 90){
+ statusbsw.innerHTML = "LULUS";
+}
+else if(nilai < 90){
+  statusbsw.innerHTML = "TIDAK LULUS";
+}
+
+
+
+  var snowsrc="https://media3.giphy.com/media/JRVdosN6SFSn2p1Iju/giphy.webp?cid=ecf05e47c6fb912945ab22e75b0bc7f89f590ed39960c7a9&rid=giphy.webp";
+			  var no = 20;
+			  var hidesnowtime = "0";
+			  var snowdistance = "pageheight";
+			
+			  var ie4up = (document.all) ? 1 : 0;
+			  var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+			
+				function iecompattest(){
+				return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+				}
+			
+			  var dx, xp, yp;  
+			  var am, stx, sty; 
+			  var i, doc_width = 800, doc_height = 400; 
+			  
+			  if (ns6up) {
+				doc_width = self.innerWidth;
+				doc_height = self.innerHeight;
+			  } else if (ie4up) {
+				doc_width = iecompattest().clientWidth;
+				doc_height = iecompattest().clientHeight;
+			  }
+			
+			  dx = new Array();
+			  xp = new Array();
+			  yp = new Array();
+			  am = new Array();
+			  stx = new Array();
+			  sty = new Array();
+			  snowsrc=(snowsrc.indexOf("dynamicdrive.com")!=-1)? "snow.gif" : snowsrc
+			  for (i = 0; i < no; ++ i) {  
+				dx[i] = 0;                        // set coordinate variables
+				xp[i] = Math.random()*(doc_width-50);  // set position variables
+				yp[i] = Math.random()*doc_height;
+				am[i] = Math.random()*20;         // set amplitude variables
+				stx[i] = 0.02 + Math.random()/10; // set step variables
+				sty[i] = 0.7 + Math.random();     // set step variables
+					if (ie4up||ns6up) {
+				  if (i == 0) {
+					document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://wpplugins.info\"><img src="+snowsrc+" border=\"0\"><\/a><\/div>");
+				  } else {
+					document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src="+snowsrc+" border=\"0\"><\/div>");
+				  }
+				}
+			  }
+			
+			  function snowIE_NS6() {  // IE and NS6 main animation function
+				doc_width = ns6up?window.innerWidth-10 : iecompattest().clientWidth-10;
+					doc_height=(window.innerHeight && snowdistance=="windowheight")? window.innerHeight : (ie4up && snowdistance=="windowheight")?  iecompattest().clientHeight : (ie4up && !window.opera && snowdistance=="pageheight")? iecompattest().scrollHeight : iecompattest().offsetHeight;
+				for (i = 0; i < no; ++ i) {  // iterate for every dot
+				  yp[i] += sty[i];
+				  if (yp[i] > doc_height-50) {
+					xp[i] = Math.random()*(doc_width-am[i]-30);
+					yp[i] = 0;
+					stx[i] = 0.02 + Math.random()/10;
+					sty[i] = 0.7 + Math.random();
+				  }
+				  dx[i] += stx[i];
+				  document.getElementById("dot"+i).style.top=yp[i]+"px";
+				  document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";  
+				}
+				snowtimer=setTimeout("snowIE_NS6()", 10);
+			  }
+			
+				function hidesnow(){
+					if (window.snowtimer) clearTimeout(snowtimer)
+					for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
+				}
+					
+			
+			if (ie4up||ns6up){
+				snowIE_NS6();
+					if (hidesnowtime>0)
+					setTimeout("hidesnow()", hidesnowtime*1000)
+					}
+
+var Background=new Array;Background[0]="#f5f5f5 url('https://1.bp.blogspot.com/-Vb2jzLkkeB0/W-uPL05UN2I/AAAAAAAAHLY/Wg2PFESPjOkjEIr0BGjT5N51kWg3SHO-QCLcBGAs/s320/background%2B1.jpg') no-repeat top center fixed",Background[1]="#f5f5f5 url('https://1.bp.blogspot.com/-biufA2HFHVo/W-uPLiIpZWI/AAAAAAAAHLU/nuhIkdEHXvchsvdyp_4uacDBaNIkH2VCgCLcBGAs/s320/background%2B2.jpg') no-repeat top center fixed",Background[2]="#f5f5f5 url('https://1.bp.blogspot.com/-Af-oe9q1kQo/W-uPLx2qlFI/AAAAAAAAHLc/DkZPwegM51wP1lRhE3nX3JWUnmZbuGp0wCLcBGAs/s320/background%2B3.jpg') no-repeat top center fixed",Background[3]="#f5f5f5 url('https://1.bp.blogspot.com/-Xg-yRiuI7ns/W-uPNRZwxzI/AAAAAAAAHLg/NZnhxDs2B7kN3Umy5h8OJvMZi0Qu3E-vwCLcBGAs/s320/background%2B4.jpg') no-repeat top center fixed";var random=Math.floor(4*Math.random());document.write("<style>"),document.write("body {"),document.write("background: "+Background[random]+";"),document.write("background-size:100%;"),document.write(" }"),document.write("</style>");
+//]]>
+function refreshPage() {
+  window.location.href = window.location.href;
+}
+</script>
 </body>
 </html>
